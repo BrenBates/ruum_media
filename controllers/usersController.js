@@ -1,6 +1,4 @@
 const db = require("../models");
-var bcrypt = require("bcrypt");
-var jwt = require("jsonwebtoken");
 
 // Defining methods for the usersController
 module.exports = {
