@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import PrivateRoute from './privateRoute';
+import home from './pages/home/home';
+import landing from './pages/landing/landing';
+import navComponent from './components/navbar/navbar';
+import noMatch from './pages/noMatch/noMatch';
+import { AuthContext } from './context/auth';
 
-function App() {
+function App(props) {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello, my name is Brennen Bates!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={landing} />
+            <PrivateRoute path="/home" component={home} />
+            <Route component={noMatch} />
+          </Switch>        
+        </div>
+      </Router>
+    
   );
 }
 
