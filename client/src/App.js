@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import PrivateRoute from './privateRoute';
+import PrivateRoute from './components/privateRoute/PrivateRoute';
 import home from './pages/home/home';
 import landing from './pages/landing/landing';
 import NavBar from './components/navbar/NavBar';
@@ -28,7 +28,7 @@ function App(props) {
           <Switch>
             <Route exact path="/" component={landing} />
             <PrivateRoute path="/home" component={home} />
-            <Route path="/profile" component={Profile} />
+            <PrivateRoute path="/profile" component={Profile} />
             <Route component={noMatch} />
           </Switch>        
         
