@@ -3,14 +3,25 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import PrivateRoute from './privateRoute';
 import home from './pages/home/home';
 import landing from './pages/landing/landing';
-import navComponent from './components/navbar/navbar';
+import NavBar from './components/navbar/NavBar';
 import noMatch from './pages/noMatch/noMatch';
-import { AuthContext } from './context/auth';
+import {useAuth0} from './react-auth0-spa';
 
 function App(props) {
 
+  const {loading} = useAuth0();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
+
+      <div className="App">
+        <header>
+          <NavBar />
+        </header>
+      
 
       <Router>
         <div>
@@ -22,6 +33,7 @@ function App(props) {
         </div>
       </Router>
     
+      </div>
   );
 }
 
