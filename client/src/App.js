@@ -6,6 +6,9 @@ import landing from './pages/landing/landing';
 import NavBar from './components/navbar/NavBar';
 import noMatch from './pages/noMatch/noMatch';
 import {useAuth0} from './react-auth0-spa';
+import Profile from './pages/profile/Profile';
+import history from './utils/history';
+
 
 function App(props) {
 
@@ -16,23 +19,20 @@ function App(props) {
   }
 
   return (
-
-      <div className="App">
+    
+    <div className="App">
+      <Router history={history}>
         <header>
           <NavBar />
         </header>
-      
-
-      <Router>
-        <div>
           <Switch>
             <Route exact path="/" component={landing} />
             <PrivateRoute path="/home" component={home} />
+            <Route path="/profile" component={Profile} />
             <Route component={noMatch} />
           </Switch>        
-        </div>
+        
       </Router>
-    
       </div>
   );
 }
