@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 // import Login from "../Login/Login";
 // import { Logo } from '../../components/AuthForm';
 // import logoImg from "../../img/walkthru2.png";
-import '../landing/landing.css'
+import '../landing/Landing.css'
 
 
 function landing(props) {
