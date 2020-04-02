@@ -6,7 +6,7 @@ import Landing from './pages/landing/landing';
 import NavBar from './components/navbar/navbar';
 import NoMatch from './pages/noMatch/noMatch';
 import {useAuth0} from './react-auth0-spa';
-import Profile from './pages/profile/Profile';
+import Profile from './pages/profile/profile';
 import history from './utils/history';
 
 
