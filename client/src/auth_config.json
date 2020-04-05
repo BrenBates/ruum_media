@@ -1,4 +1,6 @@
 {
     "domain": "ruummedia-dev.auth0.com",
-    "clientId": "mjUCPY3TJgci81QuEbblknbsg5yhZRFk"
+    "roleURL": "https://ruum-media/role",
+    "clientId": "mjUCPY3TJgci81QuEbblknbsg5yhZRFk",
+    "callbackURL": "http://localhost:3000/callback"
   }
