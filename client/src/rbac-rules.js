@@ -3,6 +3,7 @@
 // Static permissions are helpful when, for example, you have to allow write access to writers and admins only. 
 // Dynamic permissions are helpful when, for example, you have only to allow the writer who is the owner of a resource to edit that resource.
 
+// Permissions are defined in the format of resource:action
 
 const rules = {
     visitor: {
@@ -33,6 +34,7 @@ const rules = {
         "users:getSelf",
         "home-page:visit",
         "dashboard-page:visit"
+        // "profile-page:visit"
       ]
     }
   };
