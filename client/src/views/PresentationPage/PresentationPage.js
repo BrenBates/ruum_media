@@ -42,7 +42,7 @@ export default function PresentationPage() {
     <div>
       <Header
         brand="RUUM Media"
-        links={<HeaderLinks dropdownHoverColor="info" />}
+        links={<HeaderLinks dropdownHoverColor="transparent" />}
         fixed
         color="transparent"
         changeColorOnScroll={{
