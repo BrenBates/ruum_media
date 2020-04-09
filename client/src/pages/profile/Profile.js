@@ -3,7 +3,7 @@
 
 import React, { Fragment } from 'react';
 import { useAuth0 } from '../../react-auth0-spa';
-import Can from '../../components/Can';
+import Can from '../../utils/Can';
 
 const Profile = () => {
   const { loading, user } = useAuth0();

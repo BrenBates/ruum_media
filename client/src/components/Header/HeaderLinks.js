@@ -123,7 +123,7 @@ export default function HeaderLinks(props) {
           className={classes.navButton}
           round
         >
-          <LockOpen className={classes.icons} /> Login
+          <LockOpen className={classes.icons} /> Log
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
