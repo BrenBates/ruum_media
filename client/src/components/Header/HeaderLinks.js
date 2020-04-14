@@ -96,7 +96,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
       <Button
           href="/"
-          color={window.innerWidth < 960 ? "info" : "transparent"}
+          color={window.innerWidth < 960 ? "info" : "white"}
           // target="_Blank"
           className={classes.navButton}
           round
@@ -107,7 +107,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
       <Button
           href="/about-us"
-          color={window.innerWidth < 960 ? "info" : "transparent"}
+          color={window.innerWidth < 960 ? "info" : "white"}
           // target="_Blank"
           className={classes.navButton}
           round
@@ -118,7 +118,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
       <Button
           href="/login-page"
-          color={window.innerWidth < 960 ? "info" : "transparent"}
+          color={window.innerWidth < 960 ? "info" : "white"}
           // target="_blank"
           className={classes.navButton}
           round
@@ -129,7 +129,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button
           href="signup-page"
-          color={window.innerWidth < 960 ? "info" : "transparent"}
+          color={window.innerWidth < 960 ? "info" : "white"}
           target="_blank"
           className={classes.navButton}
           round
