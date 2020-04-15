@@ -33,8 +33,8 @@ const rules = {
         "users:get",
         "users:getSelf",
         "home-page:visit",
-        "dashboard-page:visit"
-        // "profile-page:visit"
+        "dashboard-page:visit",
+        "profile-page:visit"
       ]
     }
   };
