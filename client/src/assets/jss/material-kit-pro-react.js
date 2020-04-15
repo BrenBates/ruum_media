@@ -104,6 +104,27 @@ const infoColor = [
   "#4dd0e1"
 ];
 const ruumColor = ["#4e90cd", "#1c242d"];
+const ruumblueColor = [
+  "#4E90CD",
+  "#35628C",
+  "#1D364D",
+  "#5298D9",
+  "#447DB3"
+];
+const ruumdarkColor = [
+  "#1C242D",
+  "#7394BA",
+  "#4C627A",
+  "#242F3B",
+  "#202933"
+];
+const ruumcustomColor = [
+  "#FF8747",
+  "#4E90CD",
+  "#43CCC6",
+  "#CCD93D",
+  "#5958CC"
+];
 const roseColor = ["#e91e63", "#ec407a", "#d81b60", "#f8bbd0", "#f06292"];
 const grayColor = [
   "#999",
@@ -451,6 +472,9 @@ export {
   successColor,
   infoColor,
   ruumColor,
+  ruumblueColor,
+  ruumdarkColor,
+  ruumcustomColor,
   roseColor,
   grayColor,
   whiteColor,
