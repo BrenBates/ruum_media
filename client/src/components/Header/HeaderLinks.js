@@ -99,106 +99,109 @@ export default function HeaderLinks(props) {
   const { dropdownHoverColor } = props;
   const classes = useStyles();
   return (
-    <List className={classes.list + " " + classes.mlAuto}>
-      <ListItem className={classes.listItem}>
-      <Button
-          href="/"
-          color={window.innerWidth < 960 ? "info" : "white"}
-          // target="_Blank"
-          className={classes.navButton}
-          round
-        >
-          <Computer className={classes.icons} /> HomeSites
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-      <Button
-          href="/about-us"
-          color={window.innerWidth < 960 ? "info" : "white"}
-          // target="_Blank"
-          className={classes.navButton}
-          round
-        >
-          <Info className={classes.icons} /> About Us
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-      <Button
-          href="/login-page"
-          color={window.innerWidth < 960 ? "info" : "white"}
-          // target="_blank"
-          className={classes.navButton}
-          round
-        >
-          <LockOpen className={classes.icons} /> Login
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
+    <>
+
+     {/*If not authenticated render the following */}
+
+      {!isAuthenticated && (
+
+        <List className={classes.list + " " + classes.mlAuto}>
+        <ListItem className={classes.listItem}>
         <Button
-          href="signup-page"
-          color={window.innerWidth < 960 ? "info" : "white"}
-          target="_blank"
-          className={classes.navButton}
-          round
-        >
-          <VpnKey className={classes.icons} /> Register
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        {/* <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={dropdownHoverColor}
-          buttonText="Examples"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={ViewCarousel}
-          dropdownList={[
-            <Link to="/about-us" className={classes.dropdownLink}>
-              <AccountBalance className={classes.dropdownIcons} /> About Us
-            </Link>,
-            <Link to="/blog-post" className={classes.dropdownLink}>
-              <ArtTrack className={classes.dropdownIcons} /> Blog Post
-            </Link>,
-            <Link to="/blog-posts" className={classes.dropdownLink}>
-              <ViewQuilt className={classes.dropdownIcons} /> Blog Posts
-            </Link>,
-            <Link to="/contact-us" className={classes.dropdownLink}>
-              <LocationOn className={classes.dropdownIcons} /> Contact Us
-            </Link>,
-            <Link to="/landing-page" className={classes.dropdownLink}>
-              <ViewDay className={classes.dropdownIcons} /> Landing Page
-            </Link>,
-            <Link to="/login-page" className={classes.dropdownLink}>
-              <Fingerprint className={classes.dropdownIcons} /> Login Page
-            </Link>,
-            <Link to="/pricing" className={classes.dropdownLink}>
-              <AttachMoney className={classes.dropdownIcons} /> Pricing Page
-            </Link>,
-            <Link to="/shopping-cart-page" className={classes.dropdownLink}>
-              <ShoppingBasket className={classes.dropdownIcons} /> Shopping Cart
-            </Link>,
-            <Link to="/ecommerce-page" className={classes.dropdownLink}>
-              <Store className={classes.dropdownIcons} /> Ecommerce Page
-            </Link>,
-            <Link to="/product-page" className={classes.dropdownLink}>
-              <ShoppingCart className={classes.dropdownIcons} /> Product Page
-            </Link>,
-            <Link to="/profile-page" className={classes.dropdownLink}>
-              <AccountCircle className={classes.dropdownIcons} /> Profile Page
-            </Link>,
-            <Link to="/signup-page" className={classes.dropdownLink}>
-              <PersonAdd className={classes.dropdownIcons} /> Signup Page
-            </Link>,
-            <Link to="/error-page" className={classes.dropdownLink}>
-              <Error className={classes.dropdownIcons} /> Error Page
-            </Link>
-          ]}
-        /> */}
-      </ListItem>
-    </List>
+            href="/"
+            color={window.innerWidth < 960 ? "info" : "transparent"}
+            // target="_Blank"
+            className={classes.navButton}
+            round
+          >
+            <Computer className={classes.icons} /> HomeSites
+          </Button>
+        </ListItem>
+        <ListItem className={classes.listItem}>
+        <Button
+            href="/about-us"
+            color={window.innerWidth < 960 ? "info" : "transparent"}
+            // target="_Blank"
+            className={classes.navButton}
+            round
+          >
+            <Info className={classes.icons} /> About Us
+          </Button>
+        </ListItem>
+        <ListItem className={classes.listItem}>
+        <Button
+            // href="/login-page"
+            color={window.innerWidth < 960 ? "info" : "transparent"}
+            // target="_blank"
+            className={classes.navButton}
+            round
+            //onClick function for the login button to redirect to the Auth0 login
+            onClick={() => {
+              loginWithRedirect({})
+            }}
+          >
+            <LockOpen className={classes.icons} /> Login
+          </Button>
+        </ListItem>
+    
+      </List>
+      
+      )}
+
+
+
+
+      {/*If authenticated render the following */}
+
+      {isAuthenticated && (
+
+        <List className={classes.list + " " + classes.mlAuto}>
+        <ListItem className={classes.listItem}>
+        <Button
+            href="/"
+            color={window.innerWidth < 960 ? "info" : "transparent"}
+            // target="_Blank"
+            className={classes.navButton}
+            round
+          >
+            <Computer className={classes.icons} /> HomeSites
+          </Button>
+        </ListItem>
+        <ListItem className={classes.listItem}>
+        <Button
+            href="/about-us"
+            color={window.innerWidth < 960 ? "info" : "transparent"}
+            // target="_Blank"
+            className={classes.navButton}
+            round
+          >
+            <Info className={classes.icons} /> About Us
+          </Button>
+        </ListItem>
+        <ListItem className={classes.listItem}>
+        <Button
+            // href="/login-page"
+            color={window.innerWidth < 960 ? "info" : "transparent"}
+            // target="_blank"
+            className={classes.navButton}
+            round
+            //onClick function for the login button to redirect to the Auth0 login
+            onClick={() => {
+              logout()
+            }}
+          >
+            <LockOpen className={classes.icons} /> Logout
+          </Button>
+        </ListItem>
+    
+      </List>
+      
+      )}
+
+
+    </>
+
+  
   );
 }
 
