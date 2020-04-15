@@ -4,6 +4,9 @@ import React from "react";
 import PropTypes from "prop-types";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
+// import useAuth0 from the auth0 SDK
+import { useAuth0 } from '../../react-auth0-spa';
+
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -50,6 +53,10 @@ import styles from "../../assets/jss/material-kit-pro-react/components/headerLin
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
+
+  // destructure auth0 functions
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
   const easeInOutQuad = (t, b, c, d) => {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;

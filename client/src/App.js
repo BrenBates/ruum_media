@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import PrivateRoute from './components/privateRoute/PrivateRoute';
 import Home from './pages/home/home';
 import Landing from './pages/landing/landing';
-import PresentationPage from './views/PresentationPage/PresentationPage'
-import NavBar from './components/navbar/navbar';
 import NoMatch from './pages/noMatch/noMatch';
 import {useAuth0} from './react-auth0-spa';
-// import Profile from './pages/profile/profile';
+import Profile from './pages/profile/profile';
 import history from './utils/history';
 
 
@@ -23,14 +20,11 @@ function App(props) {
     
     <div className="App">
       <Router history={history}>
-        <header>
-          <NavBar />
-        </header>
+  
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route path="/presentation" component={PresentationPage} />
-            <PrivateRoute path="/home" component={Home} />
-            {/* <PrivateRoute path="/profile" component={Profile} /> */}
+            <Route path="/home" component={Home} />
+            <Route path="/profile" component={Profile} /> 
             <Route component={NoMatch} />
           </Switch>        
         
