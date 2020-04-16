@@ -137,7 +137,9 @@ export default function HeaderLinks(props) {
             round
             //onClick function for the login button to redirect to the Auth0 login
             onClick={() => {
-              loginWithRedirect({})
+              loginWithRedirect({
+                "redirect_uri": "http://localhost:3000/home"
+              })
             }}
           >
             <LockOpen className={classes.icons} /> Login
