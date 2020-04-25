@@ -138,7 +138,7 @@ export default function HeaderLinks(props) {
             //onClick function for the login button to redirect to the Auth0 login
             onClick={() => {
               loginWithRedirect({
-                "redirect_uri": "http://localhost:3000/home"
+                "redirect_uri": "https://ruum-media.herokuapp.com/home"
               })
             }}
           >
